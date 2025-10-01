@@ -16,7 +16,7 @@ const AboutDeveloper = () => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <Image
-            src="/uploads/NeelkanthLogo.png" // Replace with your actual logo path
+            src="/uploads/NeelKanthLogo.png" // Replace with your actual logo path
             alt="Developer Logo"
             width={80}
             height={80}
