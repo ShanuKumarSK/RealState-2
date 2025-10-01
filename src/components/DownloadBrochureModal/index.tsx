@@ -17,6 +17,7 @@ export default function DownloadBrochureModal({
     name: "",
     phone: "",
     email: "",
+    project: "Neelkanth Dreamz", // You can set this dynamically as needed
   });
 
   const [error, setError] = useState<string | null>(null);
@@ -72,7 +73,7 @@ export default function DownloadBrochureModal({
         link.click();
         link.remove();
         onClose(); // Close modal
-        setFormData({ name: "", phone: "", email: "" });
+        setFormData({ ...formData, name: "", phone: "", email: "" });
       } else {
         setError("Something went wrong. Please try again.");
       }
@@ -162,7 +163,7 @@ export default function DownloadBrochureModal({
 
           <button
             type="submit"
-            className="w-full bg-emerald-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-emerald-600 transition"
+            className="w-full bg-emerald-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-emerald-600 transition cursor-pointer"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit & Download"}

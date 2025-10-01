@@ -12,6 +12,7 @@ export default function ContactSellerCard() {
     name: "",
     phone: "",
     email: "",
+    project: "Neelkanth Dreamz", // You can set this dynamically as needed
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,7 +51,8 @@ export default function ContactSellerCard() {
 
       if (res.ok) {
         alert("Form submitted! You will be contacted soon.");
-        setFormData({ name: "", phone: "", email: "" }); // clear form
+        // preserve project field when clearing form values
+        setFormData({ ...formData, name: "", phone: "", email: "" }); // clear form
       } else {
         alert("Something went wrong. Please try again.");
       }
