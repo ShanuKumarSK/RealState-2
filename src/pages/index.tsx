@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Agri-Uber</title>
+        <title>Advit-Realty</title>
         <meta
           name="description"
           content="Find properties for sale and rent in India"

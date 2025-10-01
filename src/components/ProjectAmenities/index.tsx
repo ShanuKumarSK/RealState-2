@@ -30,6 +30,10 @@ type Amenity = {
 };
 
 const amenities: Amenity[] = [
+  { name: "Power Backup", icon: ShieldCheck },
+  { name: "24X7 Water Supply", icon: ShowerHead },
+  { name: "Lift(s)", icon: ArrowUp },
+  { name: "24x7 CCTV Surveillance", icon: Video },
   { name: "Children's Play Area", icon: GanttChart },
   { name: "Club Rooftop", icon: Building },
   { name: "Yoga / Meditation", icon: Building },
@@ -37,17 +41,13 @@ const amenities: Amenity[] = [
   { name: "Barbecue Area", icon: Building },
   { name: "Vastu Compliant", icon: Sprout },
   { name: "Visitor Parking", icon: ParkingCircle },
-  { name: "Lift(s)", icon: ArrowUp },
   { name: "Badminton Court", icon: Bike },
-  { name: "EV Charging Point", icon: Car },
-  { name: "24x7 CCTV Surveillance", icon: Video },
   { name: "Flower Garden", icon: Flower },
   { name: "Gymnasium", icon: Dumbbell },
-  { name: "24X7 Water Supply", icon: ShowerHead },
   { name: "Closed Car Parking", icon: Lock },
   { name: "Jogging Track", icon: MoveHorizontal },
   { name: "Gated Community", icon: KeyRound },
-  { name: "Power Backup", icon: ShieldCheck },
+ 
 ];
 
 const INITIAL_COUNT = 11;

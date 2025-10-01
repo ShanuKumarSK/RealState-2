@@ -13,11 +13,12 @@ const infoData: InfoItem[] = [
     subtitle: "Configurations",
   },
   {
-    title: "Nov, 2029",
-    subtitle: "Possession Starts",
+    title: "Ready to Move",
+    subtitle: "",
+    // subtitle: "Possession Starts",
   },
   {
-    title: "₹ 6200/sq.ft",
+    title: "Starts From ₹73.78 L*",
     subtitle: "Base Price",
   },
   {
@@ -39,7 +40,9 @@ const ProjectInfoSection: React.FC = () => {
           {item.title}
         </p>
         {/* {item.extra && <div className="mt-1">{item.extra}</div>} */}
-        <p className="text-sm sm:text-sm text-gray-600">{item.subtitle}</p>
+        {
+          item.subtitle && (<p className="text-sm sm:text-sm text-gray-600">{item.subtitle}</p>)
+        }
       </div>
     ))}
   </div>

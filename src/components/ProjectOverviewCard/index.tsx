@@ -8,6 +8,8 @@ import {
   FaThLarge,
   FaIdBadge,
 } from "react-icons/fa";
+import DownloadBrochureModal from "../DownloadBrochureModal";
+import { useState } from "react";
 // import FadeIn from "../TransitionComponents/FadeIn";
 
 type ProjectOverviewProps = {
@@ -29,6 +31,10 @@ export default function ProjectOverviewCard({
   configurations,
   reraId,
 }: ProjectOverviewProps) {
+
+    const [showModal, setShowModal] = useState(false);
+
+
   const overviewItems = [
     { icon: FaRulerCombined, label: "Sizes", value: sizes },
     { icon: FaBuilding, label: "Project Size", value: projectSize },
@@ -74,11 +80,21 @@ export default function ProjectOverviewCard({
         <h2 className="text-xl font-semibold text-gray-900">
           Neelkanth Dreamz Overview
         </h2>
-        <a href="/uploads/NeelkanthDreamz.pdf" download>
+        {/* <a href="/uploads/NeelkanthDreamz.pdf" download>
           <button className="flex p-2 rounded-md items-center gap-2 text-sm font-medium text-teal-600 hover:text-white hover:bg-teal-600 transition border cursor-pointer">
             <FaDownload /> Download Brochure
           </button>
-        </a>
+        </a> */}
+        <button
+          onClick={() => setShowModal(true)}
+          className="flex p-2 rounded-md items-center gap-2 text-sm font-medium text-teal-600 hover:text-white hover:bg-teal-600 transition border cursor-pointer"
+        >
+          <FaDownload /> Download Brochure
+        </button>
+        <DownloadBrochureModal
+          isOpen={showModal}
+          onClose={() => setShowModal(false)}
+        />
       </div>
 
       {/* Info Grid */}
@@ -104,7 +120,9 @@ export default function ProjectOverviewCard({
                       {item.value}
                     </p>
                   ) : (
-                    <p className="text-sm md:text-base text-gray-600">{item.value}</p>
+                    <p className="text-sm md:text-base text-gray-600">
+                      {item.value}
+                    </p>
                   )}
                 </div>
               </div>
@@ -120,7 +138,7 @@ export default function ProjectOverviewCard({
 
       {/* Action Buttons */}
       <div className="flex flex-row sm:flex-row gap-3 mt-2">
-{/*         <button className="flex-1 flex items-center justify-center gap-2 border-black rounded-md py-2 text-sm text-black font-medium hover:bg-gray-50 transition cursor-pointer">
+        {/*         <button className="flex-1 flex items-center justify-center gap-2 border-black rounded-md py-2 text-sm text-black font-medium hover:bg-gray-50 transition cursor-pointer">
           <FaShareAlt /> Share
         </button>
         <button className="flex-1 flex items-center justify-center gap-2 border-black rounded-md py-2 text-sm text-black font-medium bg-purple-200 hover:bg-purple-400 transition cursor-pointer">

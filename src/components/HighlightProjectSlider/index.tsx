@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 
 type HighlightProject = {
   key: string;
+  sellingPoint?: string;
   developer: string;
   types: string;
   location: string;
@@ -33,7 +34,7 @@ export default function HighlightProjectSlider({
 
   return (
     // <div className="absolute right-4 md:right-8 md:top-3/5 top-1/3 z-20 w-60 md:w-100 bg-black bg-opacity-60 rounded-xl shadow-lg text-white">
-    <div className="relative w-full h-[60vh] md:h-[80vh] text-white overflow-hidden">
+    <div className="relative w-full h-[30vh] md:h-[80vh] text-white overflow-hidden">
       {/* Close Button */}
       {/* <button
         onClick={() => setVisible(false)}
@@ -99,34 +100,39 @@ export default function HighlightProjectSlider({
                 </div>
               </div> */}
 
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center md:justify-end px-20">
-                {/* Project Details */}
-                <div className="max-w-xl text-center px-6">
-                  <h2 className="text-xl sm:text-3xl font-bold">{item.title}</h2>
-
-
+              {/* <div className="absolute inset-0 flex items-center justify-center md:justify-end px-20">
+                <div className="max-w-xl text-center px-6 bg-black/40 text-orange-400">
+                  <h2 className="text-xl sm:text-2xl font-bold">
+                    {item.sellingPoint}
+                  </h2>
+                  <h2 className="text-xl sm:text-3xl font-bold">
+                    {item.title}
+                  </h2>
                   <div className="mt-3">
                     <p className="text-xs sm:text-base">{item.types}</p>
-                    {/* <p className="text-xs sm:text-base text-gray-300">
+                    <p className="text-sm sm:text-lg font-semibold">
                       {item.location}
-                    </p> */}
-                    <p className="text-sm sm:text-lg text-gray-200 mt-2">
-                    By <span className="text-xl sm:text-xl font-bold">{item.developer}</span>
-                  </p>
+                    </p>
+                    <p className="text-sm sm:text-lg mt-2">
+                      By{" "}
+                      <span className="text-xl sm:text-xl font-bold">
+                        {item.developer}
+                      </span>
+                    </p>
                     <p className="text-lg sm:text-2xl font-semibold mt-2">
                       {item.price}
                     </p>
                   </div>
 
-                  {/* <a
+                  <a
                     href={item.link}
                     target={item.target || "_blank"}
                     className="mt-4 inline-block bg-blue-500 hover:bg-blue-600 text-white text-sm sm:text-base px-4 py-2 rounded-md transition"
                   >
                     {item.linkTitle}
-                  </a> */}
+                  </a>
 
-                  {/* <a
+                  <a
                     href={item.link}
                     target={item.target || "_blank"}
                     className="mt-4 inline-block px-6 py-2 text-white text-sm sm:text-base font-semibold rounded-full
@@ -134,11 +140,9 @@ export default function HighlightProjectSlider({
              hover:from-blue-600 hover:to-purple-600 transition duration-300"
                   >
                     {item.linkTitle || "Click me!"}
-                  </a> */}
-
-                  
+                  </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </SwiperSlide>
         ))}

@@ -9,11 +9,22 @@ const interiorImages = [
   "/uploads/NeelkanthInterior2.jpeg",
   "/uploads/NeelkanthInterior3.jpeg",
   "/uploads/NeelkanthInterior4.jpeg",
-  "/uploads/NeelkanthInterior4.jpeg",
+  "/uploads/NeelkanthInterior5.jpeg",
+  "/uploads/NeelkanthInterior6.jpeg",
+  "/uploads/NeelkanthInterior7.jpeg",
+  "/uploads/NeelkanthInterior8.jpeg",
+  "/uploads/NeelkanthInterior9.jpeg",
+  "/uploads/NeelkanthInterior10.jpeg",
+  "/uploads/NeelkanthInterior11.jpeg",
+  "/uploads/NeelkanthInterior12.jpeg",
 ];
 
 const exteriorImages = [
-  "/uploads/Neelkanth2.png"
+  "/uploads/NeelkanthExterior1.jpeg",
+  "/uploads/NeelkanthExterior2.jpeg",
+  "/uploads/NeelkanthExterior3.jpeg",
+  "/uploads/NeelkanthExterior4.jpeg",
+  "/uploads/NeelkanthExterior5.jpeg",
 ];
 
 export default function ProjectGallerySection() {

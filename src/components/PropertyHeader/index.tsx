@@ -61,7 +61,7 @@ const PropertyHeader: React.FC<PropertyHeaderProps> = ({
             className="bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-md text-sm flex items-center gap-2 transition cursor-pointer"
             onClick={() => handleTabClick("ContactSeller")}
           >
-            📞 Contact Developer
+            📞 Contact us
           </button>
         </div>
       </div>

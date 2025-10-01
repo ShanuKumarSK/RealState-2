@@ -30,12 +30,12 @@ const AboutDeveloper = () => {
             Mangalam Builders and Promoters
           </h3>
 
-          <div className="flex items-center gap-6 text-sm text-gray-600 mb-2">
+          {/* <div className="flex items-center gap-6 text-sm text-gray-600 mb-2">
             <div>
               <div className="font-medium text-black">1</div>
               <div className="text-xs">Project</div>
             </div>
-          </div>
+          </div> */}
 
           {/* Description */}
           <p className="text-sm text-gray-500">

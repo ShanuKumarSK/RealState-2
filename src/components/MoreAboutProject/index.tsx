@@ -23,7 +23,7 @@ export default function MoreAboutProject() {
 
       {/* Description */}
       <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-        {`Neelkanth Dreamz is a ready to move residential development project by Mangalam Builders and Promoters located at Sector -14 Vrindavan Yojna Raebareli Road Lucknow. This project is spread across 2 acres of land with 40 % open space and comprises of 2 towers of G+9 and G + 10 floors. There are total 190 units perfectly planned with proper utilization of space. It will have spacious 2 and 3 BHK apartments of super built up area 1190 to 1780 sqft.
+        {`Neelkanth Dreamz is a ready to move residential development project by Mangalam Builders and Promoters located at Sector -14 Vrindavan Yojna Raebareli Road Lucknow. This project is spread across 2 acres of land with 40 % open space and comprises of 2 towers of G+9 and G + 10 floors. There are total 185 units perfectly planned with proper utilization of space. It will have spacious 2 and 3 BHK apartments of super built up area 1190 to 1780 sqft.
 The project is constructed with best used of branded construction material & fittings. The project offers minimum waiting period for lifts as two lifts are available on each blocks.
 This is a RERA registered project with registration number UPRERAPRJ6035.
 Bank loan approved from all leading banks for home loans.  

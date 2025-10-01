@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropertyHeader from "../PropertyHeader";
 import ImageGallery from "../ImageGallery";
 import ProjectInfoSection from "../ProjectInfoSection";
@@ -11,9 +11,11 @@ import ProjectAmenities from "../ProjectAmenities";
 import AboutDeveloper from "../AboutDeveloper";
 import ContactSellerCard from "../ContactSellerCard";
 import HighlightProjectSlider from "../HighlightProjectSlider";
+import PopUp from "../PopUp";
 
 type HighlightProject = {
   key: string;
+  sellingPoint?: string;
   developer: string;
   types: string;
   location: string;
@@ -28,10 +30,11 @@ type HighlightProject = {
 const highlightProjects: HighlightProject[] = [
   {
     key: "1",
+    sellingPoint:"Ready to Move",
     title: "Neelkanth Dreamz",
     developer: "Mangalam Builders and Promoters",
     types: "2, 3 BHK Apartments",
-    location: "Medavakkam, Chennai",
+    location: "Vrindavan Yojna, Raibareily Road, Lucknow",
     price: "₹ 73.78 L* - ₹ 1.10 Cr*",
     image: "/uploads/Neelkanth2.png",
     link: "/PropertyDetails/1",
@@ -83,21 +86,29 @@ const LandingPage: React.FC = () => {
 
   const highlights = [
     "Gated Community With Secure App-based Access Control",
-    "Dedicated Covered Parking (1 Per Unit)",
-    "Sky Garden Rooftop Retreat",
+    "Dedicated Parking (1 Per Unit)",
     "100% Power Backup For Uninterrupted Comfort",
-    "Ev Charging Station In Parking Area",
     "Apartments With North, East, And West Facings",
     "Premium Italian Tile Flooring",
     "A+ Grade Construction Quality",
     "Earthquake-Resistant Structure",
     "Spacious Balconies with every unit",
-    "Modern Italian Kitchens",
     "Ultra-Luxury Fixtures & Fittings",
     "Vastu-Compliant Layouts",
-    "Luxury Guest Lounge for residents and visitors",
+    "Multi-Purpose Club House",
     "Fully Equipped Gym",
   ];
+
+    const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    // Show popup on page load
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 500); // Small delay for better UX
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
@@ -150,10 +161,10 @@ const LandingPage: React.FC = () => {
               <div id="around" className="rounded-lg bg-white">
                 <ProjectOverviewCard
                   sizes="1190 - 1780 sq.ft"
-                  projectSize="Single Tower - 117 units"
+                  projectSize="Single Tower - 185 units"
                   launchDate="Mar, 2025"
-                  basePrice="₹ 5800/sq.ft"
-                  possession="Nov, 2029"
+                  basePrice="₹ 6200/sq.ft"
+                  possession="Dec, 2024"
                   configurations="2, 3 BHK Apartments"
                   reraId="UPRERAPRJ6035"
                 />
@@ -284,6 +295,13 @@ const LandingPage: React.FC = () => {
           Copyright 2025 Advit
         </div>
       </footer> */}
+
+
+      <PopUp 
+        isOpen={showPopup} 
+        onClose={() => setShowPopup(false)}
+        autoCloseDelay={10000}
+      />
     </div>
   );
 };
