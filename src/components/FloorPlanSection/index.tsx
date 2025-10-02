@@ -157,11 +157,17 @@ const configurations = [
     floorPlans: [
       {
         img: "/uploads/Neelkanth2BHKFloorPlan-1190.png",
-        area: "1190 Sq.ft",
+        superBuiltupArea: "1190 Sq.ft",
+        carpetArea: "728 Sq.ft",
+        builtupArea: "867 Sq.ft",
+        price: "73.78 L*",
       },
       {
         img: "/uploads/Neelkanth2BHKFloorPlan-1290.png",
-        area: "1290 Sq.ft",
+        superBuiltupArea: "1290 Sq.ft",
+        carpetArea: "834 Sq.ft",
+        builtupArea: "1023 Sq.ft",
+        price: "79.98 L*",
       },
     ],
   },
@@ -172,19 +178,31 @@ const configurations = [
     floorPlans: [
       {
         img: "/uploads/Neelkanth3BHKFloorPlan-1590.png",
-        area: "1590 Sq.ft",
+        superBuiltupArea: "1590 Sq.ft",
+        carpetArea: "1018 Sq.ft",
+        builtupArea: "1224 Sq.ft",
+        price: "98.58 L*",
       },
       {
         img: "/uploads/Neelkanth3BHKFloorPlan-1630.png",
-        area: "1630 Sq.ft",
+        superBuiltupArea: "1630 Sq.ft",
+        carpetArea: "1049 Sq.ft",
+        builtupArea: "1239 Sq.ft",
+        price: "1.01 Cr*",
       },
       {
         img: "/uploads/Neelkanth3BHKFloorPlan-1640.png",
-        area: "1640 Sq.ft",
+        superBuiltupArea: "1640 Sq.ft",
+        carpetArea: "1035 Sq.ft",
+        builtupArea: "1251 Sq.ft",
+        price: "1.02 Cr*",
       },
       {
         img: "/uploads/Neelkanth3BHKFloorPlan-1780.png",
-        area: "1780 Sq.ft",
+        superBuiltupArea: "1780 Sq.ft",
+        carpetArea: "1094 Sq.ft",
+        builtupArea: "1291 Sq.ft",
+        price: "1.10 Cr*",
       },
     ],
   },
@@ -280,12 +298,12 @@ export default function FloorPlanSection() {
 
       {/* Area */}
       <div className="text-sm text-primary font-semibold border-b border-primary mb-4 inline-block text-gray-800">
-        {currentImage.area}
+        {currentImage.superBuiltupArea}
       </div>
 
       {/* Price */}
       <p className="text-lg font-bold mb-4 text-gray-800">
-        ₹ {config.basePrice}
+        ₹ {currentImage.price}
       </p>
 
       {/* Image Slider with fixed height */}
@@ -340,7 +358,7 @@ export default function FloorPlanSection() {
           >
             <Image
               src={currentImage.img}
-              alt={`${config.type} - ${currentImage.area}`}
+              alt={`${config.type} - ${currentImage.superBuiltupArea}`}
               fill
               className="object-contain pointer-events-none"
               sizes="(max-width: 768px) 100vw, 500px"
@@ -360,12 +378,19 @@ export default function FloorPlanSection() {
       </div>
 
       {/* Footer Info */}
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-gray-700">
+      <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-gray-700">
         <div className="flex items-center gap-2">
           <span>🏢</span>
           <div>
-            <p className="font-semibold">Super Builtup Area</p>
-            <p>{currentImage.area}</p>
+            <p className="font-semibold">Builtup Area</p>
+            <p>{currentImage.builtupArea}</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span>🏢</span>
+          <div>
+            <p className="font-semibold">Carpet Area</p>
+            <p>{currentImage.carpetArea}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">

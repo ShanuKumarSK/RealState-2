@@ -8,10 +8,10 @@ type InfoItem = {
 };
 
 const infoData: InfoItem[] = [
-  {
-    title: "2, 3 BHK Apartments",
-    subtitle: "Configurations",
-  },
+  // {
+  //   title: "2, 3 BHK Apartments",
+  //   subtitle: "Configurations",
+  // },
   {
     title: "Ready to Move",
     subtitle: "",
@@ -23,14 +23,22 @@ const infoData: InfoItem[] = [
   },
   {
     title: "1190 - 1780 sq.ft",
+    subtitle: "Super Builtup Area",
+  },
+  {
+    title: "728 - 1094 sq.ft",
     subtitle: "Carpet Area",
+  },
+  {
+    title: "867 - 1291 sq.ft",
+    subtitle: "Builtup Area",
   },
 ];
 
 const ProjectInfoSection: React.FC = () => {
   return (
 <div className="w-full bg-white rounded-md p-2 sm:p-4">
-  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-0 sm:divide-x sm:divide-gray-300 items-stretch">
+  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-0 sm:divide-x sm:divide-gray-300 items-stretch">
     {infoData.map((item, index) => (
       <div
         key={index}

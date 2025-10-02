@@ -94,6 +94,9 @@ export default function ContactSellerCard() {
           </div>
         </div>
 
+        <p className="text-base font-semibold text-gray-700 blink-text">
+          For latest price & offers
+        </p>
         <p className="text-base font-semibold mb-2 text-gray-700">
           Please share your contact
         </p>

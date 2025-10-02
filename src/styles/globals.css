@@ -116,3 +116,25 @@ html {
   scroll-behavior: smooth;
 }
 
+/* @keyframes blink {
+  0%, 100% { color: red; }
+  50% { color: yellow; }
+}
+
+.blink-text {
+  animation: blink 1s infinite;
+} */
+
+@keyframes blink{
+  0% { color: red; }
+  20% { color: orange; }
+  40% { color: green; }
+  60% { color: blue; }
+  80% { color: indigo; }
+  100% { color: violet; }
+}
+
+.blink-text {
+  animation: blink 2s infinite;
+}
+

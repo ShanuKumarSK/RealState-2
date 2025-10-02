@@ -49,7 +49,7 @@ const PropertyHeader: React.FC<PropertyHeaderProps> = ({
             <div className="md:text-right text-left">
               <p className="text-lg font-bold text-gray-800">{priceRange}</p>
               <p className="text-xs text-gray-500">{pricePerSqft}</p>
-              <p className="text-sm text-gray-800 font-semibold">{"Carpet Area"}</p>
+              <p className="text-sm text-gray-800 font-semibold">{"Super Builtup Area"}</p>
 
               {/* <p className="text-sm text-purple-700 font-medium">
                 EMI starts at {emiText}

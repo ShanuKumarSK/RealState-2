@@ -30,7 +30,7 @@ type HighlightProject = {
 const highlightProjects: HighlightProject[] = [
   {
     key: "1",
-    sellingPoint:"Ready to Move",
+    sellingPoint: "Ready to Move",
     title: "Neelkanth Dreamz",
     developer: "Mangalam Builders and Promoters",
     types: "2, 3 BHK Apartments",
@@ -65,23 +65,32 @@ const highlightProjects: HighlightProject[] = [
   //   linkTitle: "View Project",
   //   target: "_self",
   // },
-]
+];
 
 const LandingPage: React.FC = () => {
   const images = [
+    "/uploads/Brochure-1.png",
     "/uploads/Neelkanth3.png",
     "/uploads/Neelkanth2.png",
     "/uploads/Neelkanth1.png",
     "/uploads/Neelkanth4.png",
-    "/uploads/Neelkanth5.png",
     "/uploads/Neelkanth6.png",
     "/uploads/Neelkanth7.png",
     "/uploads/Neelkanth8.png",
-    "/uploads/Neelkanth9.png",
-    "/uploads/Neelkanth10.png",
-    "/uploads/Neelkanth11.png",
     "/uploads/Neelkanth12.png",
-    "/uploads/Neelkanth13.png",
+    "/uploads/Brochure-2.png",
+    "/uploads/Brochure-3.png",
+    "/uploads/Brochure-4.png",
+    "/uploads/Brochure-5.png",
+    "/uploads/Brochure-6.png",
+    "/uploads/Brochure-7.png",
+    "/uploads/Brochure-8.png",
+    "/uploads/Brochure-9.png",
+    "/uploads/Brochure-10.png",
+    "/uploads/Brochure-11.png",
+    "/uploads/Brochure-12.png",
+    "/uploads/Brochure-13.png",
+    "/uploads/Brochure-14.png",
   ];
 
   const highlights = [
@@ -99,7 +108,7 @@ const LandingPage: React.FC = () => {
     "Fully Equipped Gym",
   ];
 
-    const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     // Show popup on page load
@@ -181,7 +190,7 @@ const LandingPage: React.FC = () => {
               <div id="amenities">
                 <ProjectAmenities />
               </div>
-{/*               <div id="rating&reviews">
+              {/*               <div id="rating&reviews">
                 <ResidentReviews />
               </div> */}
               {/* <div id="brochure">
@@ -296,9 +305,8 @@ const LandingPage: React.FC = () => {
         </div>
       </footer> */}
 
-
-      <PopUp 
-        isOpen={showPopup} 
+      <PopUp
+        isOpen={showPopup}
         onClose={() => setShowPopup(false)}
         autoCloseDelay={10000}
       />
