@@ -40,15 +40,29 @@ export default async function handler(
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { name, phone, email, project } = req.body;
+  const { name, phone, email, project, captcha } = req.body;
 
-  if (!name || !phone || !email || !project) {
+  if (!name || !phone || !email || !project || !captcha) {
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
-  const message = `📩 New Lead from Website:${project}\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📧 Email: ${email}`;
-
   try {
+
+    // 🔑 Verify reCAPTCHA
+    const captchaVerifyRes = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captcha}`,
+      { method: 'POST' }
+    );
+    const captchaData = await captchaVerifyRes.json();
+
+    if (!captchaData.success) {
+      return res.status(400).json({ message: 'Captcha verification failed' });
+    }
+
+        // 📲 WhatsApp message
+    const message = `📩 New Lead from Website: ${project}\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📧 Email: ${email}`;
+
+
     await client.messages.create({
       from: whatsappFrom,
       to: whatsappTo,
@@ -64,21 +78,7 @@ export default async function handler(
       createdAt: new Date(),
     });
 
-    // const mongoClient = await connectToDatabase();
-    // const db = mongoClient.db(dbName);
-    // const collection = db.collection(collectionName);
-
-    // const lead = {
-    //   name,
-    //   phone,
-    //   email,
-    //   project,
-    //   timestamp: new Date(),
-    // };
-
-    // await collection.insertOne(lead);
-
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, message: "Form submitted!" });
   } catch (error: unknown) {
     console.error('Error:', error);
     const errorMessage =

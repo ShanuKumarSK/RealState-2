@@ -4,10 +4,13 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { FaBolt } from "react-icons/fa";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactSellerCard() {
   const [checked1, setChecked1] = useState(true);
   const [checked2, setChecked2] = useState(true);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+
   const router = useRouter();
 
   const [formData, setFormData] = useState({
@@ -41,6 +44,11 @@ export default function ContactSellerCard() {
       return;
     }
 
+    if (!captchaToken) {
+      alert("Please verify you are not a robot.");
+      return;
+    }
+
     try {
       // Send data to your backend
       const res = await fetch("/api/hello", {
@@ -48,11 +56,10 @@ export default function ContactSellerCard() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, captcha: captchaToken }),
       });
 
       if (res.ok) {
-        
         // preserve project field when clearing form values
         setFormData({ ...formData, name: "", phone: "", email: "" }); // clear form
         router.push("/ThankYouPage"); // redirect to thank you page
@@ -211,6 +218,12 @@ export default function ContactSellerCard() {
                 </span>
               </label>
             </div>
+
+            {/* Captcha */}
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              onChange={(token) => setCaptchaToken(token)}
+            />
 
             {/* Submit */}
             <button
