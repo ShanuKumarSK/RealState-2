@@ -403,8 +403,8 @@ export default function FloorPlanSection() {
         <div className="flex items-center gap-2">
           <span>📅</span>
           <div>
-            <p className="font-semibold">Possession Status</p>
-            <p>Nov, 2029</p>
+            <p className="font-semibold">Ready to Move</p>
+            {/* <p>Nov, 2029</p> */}
           </div>
         </div>
       </div>
