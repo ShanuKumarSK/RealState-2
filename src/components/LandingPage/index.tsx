@@ -171,7 +171,7 @@ const LandingPage: React.FC = () => {
                 <ProjectOverviewCard
                   sizes="1190 - 1780 sq.ft"
                   projectSize="Single Tower - 185 units"
-                  launchDate="Mar, 2025"
+                  launchDate="July, 2017"
                   basePrice="₹ 6200/sq.ft"
                   possession="Dec, 2024"
                   configurations="2, 3 BHK Apartments"
