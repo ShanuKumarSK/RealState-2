@@ -2,11 +2,9 @@
 
 import { useState } from "react";
 import {
-  Car,
   Dumbbell,
   Flower,
   GanttChart,
-  //   Grill,
   KeyRound,
   Lock,
   LucideIcon,
@@ -15,12 +13,10 @@ import {
   ShowerHead,
   Sprout,
   Video,
-  //   Yoga,
   ArrowDown,
   ArrowUp,
   Building,
   MoveHorizontal,
-  Bike,
 } from "lucide-react";
 // import FadeIn from "../TransitionComponents/FadeIn";
 
@@ -35,19 +31,14 @@ const amenities: Amenity[] = [
   { name: "Lift(s)", icon: ArrowUp },
   { name: "24x7 CCTV Surveillance", icon: Video },
   { name: "Children's Play Area", icon: GanttChart },
-  { name: "Club Rooftop", icon: Building },
   { name: "Yoga / Meditation", icon: Building },
   { name: "Recreation Facilities", icon: MoveHorizontal },
-  { name: "Barbecue Area", icon: Building },
   { name: "Vastu Compliant", icon: Sprout },
   { name: "Visitor Parking", icon: ParkingCircle },
-  { name: "Badminton Court", icon: Bike },
-  { name: "Flower Garden", icon: Flower },
+  { name: "Power Garden", icon: Flower },
   { name: "Gymnasium", icon: Dumbbell },
   { name: "Closed Car Parking", icon: Lock },
-  { name: "Jogging Track", icon: MoveHorizontal },
   { name: "Gated Community", icon: KeyRound },
- 
 ];
 
 const INITIAL_COUNT = 11;
