@@ -1,64 +1,3 @@
-// import { FaCheckCircle } from "react-icons/fa";
-// import { useRouter } from 'next/router';
-// import { useEffect } from 'react';
-
-// // You might need to install heroicons if you haven't already:
-// // npm install @heroicons/react
-
-// export default function ThankYouPage({ onClose }) {
-//   const router = useRouter();
-
-//   // Automatically redirect to home after 5 seconds
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       onClose();
-//       router.push("/");
-//     }, 10000); // 5000 milliseconds = 5 seconds
-
-//     // Cleanup function to clear the timer if the component unmounts
-//     // or if the user navigates away manually.
-//     return () => clearTimeout(timer);
-//   }, [router, onClose]);
-
-//   const handleGoHome = () => {
-//     onClose();
-//     router.push("/");
-//   };
-
-//   return (
-//     <div className="fixed inset-0 z-100 flex items-center justify-center bg-black/50 bg-opacity-60">
-//       <div className="w-full max-w-sm p-8 m-4 space-y-6 text-center bg-white rounded-2xl shadow-xl">
-//         <div className="flex justify-center">
-//           <span className="text-5xl">🎉🎊</span>
-//           {/* <FaCheckCircle className="w-20 h-20 text-green-500" />
-//           <span className="text-5xl">🎉</span> */}
-//         </div>
-//         <h1 className="text-3xl font-bold text-gray-800">Thank You!</h1>
-//         <p className="text-lg text-gray-600">
-//           Your form has been submitted.
-//           <br />
-//           We will contact you soon.
-//         </p>
-//         <div className="pt-2">
-//           <button
-//             onClick={handleGoHome}
-//             className="w-full px-6 py-3 font-semibold text-white transition-transform duration-300 ease-in-out bg-blue-600 rounded-lg shadow-lg hover:scale-105 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-//           >
-//             Go to Home
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// pages/thank-you.tsx  (Next.js Pages Router)
-// OR app/thank-you/page.tsx (Next.js App Router)
-
-// pages/thank-you.tsx (Next.js Pages Router)
-// OR app/thank-you/page.tsx (App Router)
-
 "use client"; // keep this if using App Router
 
 import { useEffect } from "react";
@@ -68,6 +7,14 @@ import { FaCheckCircle } from "react-icons/fa";
 
 export default function ThankYouPage() {
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17609883953/your_conversion_label_here",
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
